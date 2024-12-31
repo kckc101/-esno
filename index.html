@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Girlfriend?</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            animation: fadeIn 2s ease-out;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #ffffff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 1.5rem;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        button#yes {
+            background-color: #76c893;
+            color: #fff;
+        }
+        button#no {
+            background-color: #ff6b6b;
+            color: #fff;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+        button:active {
+            transform: scale(0.9);
+        }
+        #no:hover {
+            position: absolute;
+            top: calc(10% + 50px * (Math.random() * 10));
+            left: calc(10% + 50px * (Math.random() * 10));
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will you be my girlfriend?</h1>
+        <div class="buttons">
+            <button id="yes" onclick="sayYes()">Yes</button>
+            <button id="no">No</button>
+        </div>
+    </div>
+
+    <script>
+        function sayYes() {
+            alert("Yay! You said yes! 🎉💖");
+        }
+
+        // Optional fun movement for the "No" button
+        const noButton = document.getElementById("no");
+        noButton.addEventListener("mouseover", () => {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            noButton.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    </script>
+</body>
+</html>
